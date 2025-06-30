@@ -1,5 +1,5 @@
 import random
-import numpy as np
+#import numpy as np
 class EpsilonGreedyAgent():
 
     def __init__(self, epsilon=0.1):

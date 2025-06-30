@@ -30,4 +30,15 @@ def show_q_value(Q):
                 reward_map[_r][_c + 1] = Q[s][2]
                 reward_map[_r + 1][_c] = Q[s][3]
                 reward_map[_r][_c] = np.mean(Q[s])
-        
+    fig = plt.figure()
+    ax = fig.add_subplot(1, 1, 1)
+    ax.imshow(reward_map, cmap=cm.RdYlGn, interpolation="bilinear",
+               vmax=abs(reward_map).max(), vmin=-abs(reward_map).max())
+    ax.set_xlim(-0.5, q_ncol - 0.5)
+    ax.set_ylim(-0.5, q_nrow - 0.5)
+    ax.set_xticks(np.arrange(-0.5, q_ncol, state_size))
+    ax.set_yticks(np.arrange(-0.5, q_nrow, state_size))
+    ax.set_xticklabels(range(ncol + 1))
+    ax.set_yticklabels(range(nrow + 1))
+    ax.grid(which="both")
+    plt.show()

@@ -1,5 +1,5 @@
 import numpy as np
-import metaplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 class ELAgent():
     def __init__(self, epsilon):
@@ -11,6 +11,7 @@ class ELAgent():
         if np.random.rand() < self.epsilon:
             action = np.random.randint(len(actions))
         else:
+            print(s)
             if s in self.Q and sum(self.Q[s]) != 0:
                 return np.argmax(self.Q[s])
             else:
