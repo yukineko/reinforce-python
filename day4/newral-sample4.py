@@ -1,10 +1,10 @@
 import numpy as np
-from tensorflow.keras.layers import Dense, Conv2D, Flatten
-from tensorflow.keras import Sequential
-from tensorflow.keras.utils import to_categorical
 from sklearn.datasets import load_digits
 from sklearn.metrics import classification_report
 from sklearn.model_selection import train_test_split
+from tensorflow.keras.layers import Dense, Conv2D, Flatten
+from tensorflow.keras import Sequential
+from tensorflow.keras.utils import to_categorical
 
 dataset = load_digits()
 image_shape = (8, 8, 1)
